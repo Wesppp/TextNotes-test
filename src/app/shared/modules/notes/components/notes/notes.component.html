@@ -1,0 +1,19 @@
+<p-button
+  (click)="onShowModal()"
+  label="Добавить заметку"
+  styleClass="p-button-secondary"></p-button>
+<ul class="notes">
+  <li *ngFor="let note of notes; let i = index"
+      (click)="onSelect(note, i)"
+      [ngClass]="{
+        'notes__item--active': i === activeNoteIndex
+      }"
+      class="notes__item">
+    {{ note.title }}
+  </li>
+</ul>
+
+<app-create-note-modal
+  (modalHideEvent)="onModalHide()"
+  [visible]="visible"
+></app-create-note-modal>

@@ -1,0 +1,31 @@
+<p-dialog
+  header="Создайте новую заметку"
+  (onHide)="onHide()"
+  [(visible)]="visible"
+  [style]="{ width: '50vw' }">
+  <form
+    class="form"
+    (ngSubmit)="onSubmit(form.value)"
+    [formGroup]="form">
+    <div class="form__field">
+      <input
+        type="text"
+        formControlName="title"
+        pInputText/>
+    </div>
+    <div class="form__field">
+      <textarea
+        rows="5" cols="30"
+        pInputTextarea
+        formControlName="text"
+        [autoResize]="true"></textarea>
+    </div>
+    <div class="form__actions">
+      <p-button
+        [disabled]="form.invalid"
+        type="submit"
+        label="Добавить заметку"
+        styleClass="p-button-secondary"></p-button>
+    </div>
+  </form>
+</p-dialog>

@@ -1,0 +1,9 @@
+<div
+  *ngIf="activeNote"
+  class="card flex justify-content-center">
+  <p-panel [header]="activeNote.title">
+    <p>
+      {{ activeNote.text }}
+    </p>
+  </p-panel>
+</div>

@@ -1,0 +1,21 @@
+@import "src/styles/constants";
+
+.main {
+  display: flex;
+
+  .note-details-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .side-bar {
+    width: 300px;
+    background-color: $gray;
+    padding: 1rem;
+    font-family: sans-serif;
+
+    h2 {
+      text-align: center;
+    }
+  }
+}
